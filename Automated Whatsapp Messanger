@@ -1,0 +1,101 @@
+import pywhatkit as w #Has to be installed in the terminal with pip install pywhatkit
+import time
+import pyautogui
+import keyboard as k
+from datetime import datetime
+import csv
+import os
+import sys
+# Birthday dates in string format (optional user input from Excel list, source: https://www.youtube.com/watch?v=jmYBZssH9hg)
+
+#avs_path = Abosulte path to current file (sys.argv[0] reads current filename due to it being first argument of python execution)
+abs_pth = os.path.abspath(sys.argv[0])
+#fetch directory name with OS module of a path (currently absolute path, returns current directory of python script)
+current_directory = os.path.dirname(abs_pth)
+
+
+with open(current_directory+"\\data.csv", newline='') as csvdata:
+    data = list(csv.reader(csvdata))
+
+# Iterate through the csv file 'data' in the same directory as the main.py file
+
+for subdata in data:
+        item = subdata[0].split(";")
+        name = item[0]
+        nummer = item[2]
+        str_birthday = item[1]
+        # convert string to date object
+        d1 = datetime.today()
+        d2 = datetime.strptime(str_birthday, "%Y/%m/%d")
+
+
+        # difference between dates in timedelta
+        delta = d1 - d2
+
+        print("Today date is: "+ str(datetime.today()) + str(name)+"'s is on: "+str(d2))
+
+        print(f'Difference is {delta.days} days')
+
+
+        # standardizes years in both dates to 1
+        def trunc_datetime(someDate):
+            return someDate.replace(year=1, hour=0, minute=0, second=0, microsecond=0)
+
+        d1 = trunc_datetime(d1)
+        d2 = trunc_datetime(d2)
+
+        # As both dates are standardized now,
+        # we can calculate the difference of days from today until the birthday
+        new_delta = d2 - d1
+
+        print("This is the number of days until your birthday:"+str(new_delta.days))
+
+        # Create datetime object
+        # convert it into datetime datatype
+        datetime_obj = datetime.today()
+
+        # It will print the datetime object
+        print("date time : {}".format(datetime_obj))
+
+        # extract the time from datetime_obj
+        time = datetime_obj.time()
+
+        # it will print time that
+        # we have extracted from datetime obj
+        print("Time : {}".format(time))
+
+        # extract hour from time
+        hour = time.hour
+        print("Hour : {}".format(hour))
+
+        # extract minute from time
+        minute = time.minute
+        print("Minute : {}".format(minute))
+
+        # Add 1 minute to minute_start and 2 minutes to minute_end so that the function w.sendwhatmsg() has enough time to open Whatsapp
+        minute_start = minute + 1
+        minute_end = minute + 2
+
+        # check types of hour and minute_start and minute_end,
+        # need to be integer for the w.sendwhatmsg() function
+
+
+        hour = int(hour)
+
+        print(minute_start)
+        print(minute_end)
+        print("type of minute_start is:", type(minute_start))
+        print("type of minute_end is:", type(minute_end))
+
+        # The message should only be sent on the specific birthday date
+        # This is when the time delta between today and your birthday date is 0
+        if new_delta.days == 0:
+            for m in range(minute_start, minute_end):
+                # adjuste hours so that hour is a variable and represents actual hour
+                w.sendwhatmsg(nummer, 'Happy Birthday und geniess deinen Tag '+str(name)+'!!!'' 😘  ❤️ :D', hour, m, 10, True, 3)
+                pyautogui.click(1837, 969)  # important here is to find out the exact location of the send button in your Whatsapp browser. You can do that with this command: print(pyautogui.position()) It will show you the coordinates of the position of your courser.
+                k.press_and_release('enter')
+                print('\n')
+        else:
+            print("No Birthdays today :(  End of code")
+            print('\n')
