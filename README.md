@@ -13,7 +13,7 @@ Our code will automatically send on What's App "happy birthday" to your friends 
 - Upload Excel sheet 
 - Send messages on What's App automatically
 # Credits
-...
+The project is inspired by and took part of the code from:
 # Authors
 - Fabio Capuano
 - Matthias Kilchenmann
