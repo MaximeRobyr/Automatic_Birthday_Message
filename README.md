@@ -14,5 +14,5 @@ Our code will automatically send on What's App "happy birthday" to your friends 
 The project is inspired by and took part of the code from:
 # 6. Authors
 - Fabio Capuano (Capo98)
-- Matthias Kilchenmann ()
+- Matthias Kilchenmann (Mats1998)
 - Maxime Robyr (MaximeRobyr)
