@@ -1,11 +1,11 @@
-import pywhatkit as w #Has to be installed in the terminal with pip install pywhatkit
-import time
-import pyautogui
-import keyboard as k
+import pywhatkit as w #Has to be installed in the terminal with pip install pywhatkit #pywhatkit is a Python library for sending WhatsApp messages
+import time #time is a Python library that provides various time-related functions.
+import pyautogui #pyautogui is a Python library used for programmatic control of mouse and keyboard.
+import keyboard as k #keyboard is a Python library that can be used to intercept global events, register hotkeys and simulate keystrokes.
 from datetime import datetime
 import csv
-import os
-import sys
+import os #os is a Python library that can be used as a portable way to use operating system dependent functions.
+import sys #sys is a Python library that provides access to some variables used or managed by the interpreter and to functions that interact strongly with the interpreter.
 # Birthday dates in string format (optional user input from Excel list, source: https://www.youtube.com/watch?v=jmYBZssH9hg)
 
 #avs_path = Abosulte path to current file (sys.argv[0] reads current filename due to it being first argument of python execution)
