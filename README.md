@@ -7,6 +7,7 @@ Have you ever forgotten to wish a friend or family member a happy birthday? Now,
 3. Add manually the data in the excel sheet. It must be written in the following way (name; year/month/day; phone number) in one cell.
 4. You have to install the Python Libraries Pywhatkit (pip install pywhatkit) and pyautogui (pip install pyautogi) and perhaps also keyboard (pip install keyboard)
 5. Before running the code, you must change the coordinates that correspond to the exact location of the send button in your WhatsApp browser at line 96 of the code. print(pyautogui.position()) It will show you the coordinates of the position of your courser.
+6. Step 5. is not always necessary but in certain circumstances the integrated send command does not work (e.g. if multiple screens are used) in our case we only used only one screen.
 
 # 3. Features
 - Automatic message sender
@@ -15,6 +16,6 @@ Have you ever forgotten to wish a friend or family member a happy birthday? Now,
 - Send messages on WhatsApp automatically
 - Conversion of Excel Data to a WhatsApp message
 # 4. Authors
-- Fabio Capuano (Capo98)
+- Fabio Capuano (Capo98) 17-604-307
 - Matthias Kilchenmann (Mats1998)
 - Maxime Robyr (MaximeRobyr)
