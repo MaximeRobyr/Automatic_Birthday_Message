@@ -1,5 +1,4 @@
 import pywhatkit as w #Has to be installed in the terminal with pip install pywhatkit #pywhatkit is a Python library for sending WhatsApp messages
-import time #time is a Python library that provides various time-related functions.
 import pyautogui #pyautogui is a Python library used for programmatic control of mouse and keyboard.
 import keyboard as k #keyboard is a Python library that can be used to intercept global events, register hotkeys and simulate keystrokes.
 from datetime import datetime
